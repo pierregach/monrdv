@@ -1,3 +1,7 @@
+import { Consultation } from "./Consultation";
+import { Lieu } from "./Lieu";
+import { Praticien } from "./Praticien";
+
 export class Creneau {
 	public id: number;
 	public dateCreneau : Date;

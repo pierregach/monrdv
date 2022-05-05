@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PriseRdvComponent } from './prise-rdv/prise-rdv.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: "priserdv", component: PriseRdvComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PriseRdvComponent } from './prise-rdv/prise-rdv.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PriseRdvComponent
   ],
   imports: [
     BrowserModule,

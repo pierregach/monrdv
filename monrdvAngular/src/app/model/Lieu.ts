@@ -1,4 +1,6 @@
-import { CreneauComponent } from "../creneau/creneau.component";
+
+import { Adresse } from "./Adresse";
+import { Praticien } from "./Praticien";
 
 export class Lieu {
 	public id: number;

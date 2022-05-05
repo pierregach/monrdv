@@ -8,6 +8,7 @@ bin/
 .env
 .DS_Store
 application.properties
+app-global.service.ts
 # Compiled class file
 *.class
 

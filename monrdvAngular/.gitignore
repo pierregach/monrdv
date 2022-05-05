@@ -1,5 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+app-global.service.ts
+
 # Compiled output
 /dist
 /tmp

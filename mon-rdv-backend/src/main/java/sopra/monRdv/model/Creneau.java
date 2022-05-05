@@ -21,7 +21,7 @@ public class Creneau {
 	private Long id;
 	
 	@Version
-	@JsonView(Views.ViewCommon.class)
+	//@JsonView(Views.ViewCommon.class)
 	private int version;
 	
 	@Temporal(TemporalType.DATE)

@@ -25,7 +25,7 @@ public class Consultation {
 	private Long id;
 	
 	@Version
-	@JsonView(Views.ViewCommon.class)
+	//@JsonView(Views.ViewCommon.class)
 	private int version;
 	
 	@Column(length = 15)

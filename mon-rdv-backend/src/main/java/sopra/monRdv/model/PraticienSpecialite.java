@@ -20,9 +20,11 @@ public class PraticienSpecialite {
 	@JsonView(Views.ViewCommon.class)
 	private Long id;
 	
+
+	//@JsonView(Views.ViewCommon.class)
 	@Version
 	private int version;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
 	@JsonView(Views.ViewCommon.class)

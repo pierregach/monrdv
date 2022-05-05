@@ -21,7 +21,7 @@ public abstract class Utilisateur {
 	private Long id;
 	
 	@Version
-	@JsonView(Views.ViewCommon.class)
+	//@JsonView(Views.ViewCommon.class)
 	private int version;
 	
 	@Column(length = 100)

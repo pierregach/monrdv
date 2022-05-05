@@ -12,9 +12,9 @@ export class Creneau {
 	public lieu: Lieu;
 	public consultation: Consultation;
 
-	
+
 	constructor(
-		id?: number, 
+		id?: number,
 		dateCreneau?: Date,
 		heureCreneau?: Date,
 		duree?: number,

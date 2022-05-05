@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Motif;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.IMotifRepository;
 
 @RestController
@@ -28,6 +31,7 @@ public class MotifRestController {
 	private IMotifRepository motifRepo;
 
 	@GetMapping("")
+	@JsonView(Views.ViewCommon.class)
 	public List<Motif> findAll() {
 		return motifRepo.findAll();
 	}
@@ -39,6 +43,17 @@ public class MotifRestController {
 
 		if (optMotif.isPresent()) {
 			return optMotif.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
+	
+	@GetMapping("/praticien/{id}")
+	@JsonView(Views.ViewCommon.class)
+	public List<Motif> findByPraticienId(@PathVariable Long id){
+		List<Motif> liste = motifRepo.findByPraticienId(id);
+		if (!liste.isEmpty()) {
+			return liste;
 		} else {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}

@@ -1,3 +1,5 @@
+import { Praticien } from "./Praticien";
+
 export class Motif {
     public id : number;
     public libelle : string;

@@ -16,7 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Creneau;
+import sopra.monRdv.model.Motif;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.ICreneauRepository;
 
 @RestController
@@ -28,6 +32,7 @@ public class CreneauRestController {
 	private ICreneauRepository creneauRepo;
 
 	@GetMapping("")
+	@JsonView(Views.ViewCommon.class)
 	public List<Creneau> findAll() {
 		return creneauRepo.findAll();
 	}
@@ -39,6 +44,17 @@ public class CreneauRestController {
 
 		if (optCreneau.isPresent()) {
 			return optCreneau.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
+	
+	@GetMapping("/praticien/{id}")
+	@JsonView(Views.ViewCommon.class)
+	public List<Creneau> findByPraticienId(@PathVariable Long id){
+		List<Creneau> liste = creneauRepo.findByPraticienId(id);
+		if (!liste.isEmpty()) {
+			return liste;
 		} else {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}

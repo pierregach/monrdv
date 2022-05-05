@@ -1,0 +1,14 @@
+
+
+<div class="d-flex">
+  <div class="photo border border-dark d-flex justify-content-center align-items-center">
+    <img src="" [alt]="praticien?.photo">
+  </div>
+  <div>
+    <ul>
+      <li> Nom : Dr. {{praticien?.nom}}, <span *ngFor="let spec of specialites" > {{spec?.nom}}  </span> </li>
+      <li> Adresse : {{praticien?.adresse.rue}} {{praticien?.adresse.codePostal}} {{praticien?.adresse.ville}} </li>
+      <li> Numéro de téléphone : {{praticien?.telephone}} </li>
+    </ul>
+  </div>
+</div>

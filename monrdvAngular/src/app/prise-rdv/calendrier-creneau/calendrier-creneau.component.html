@@ -1,0 +1,14 @@
+<table *ngIf="dureeCreneau">
+  <thead>
+    <th></th>
+    <th *ngFor="let day of daysRange" > {{day.getDate() | number:'2.'}}/{{day.getMonth()+1 | number:'2.'}} </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hour of hoursRange">
+      <td> {{hour.getHours() | number:'2.'}}:{{hour.getMinutes() | number:'2.'}} </td>
+      <td *ngFor="let day of daysRange" >
+         <button [disable]="isReserved(day,hour)" (click)="dayForm=day; hourForm = hour" >Choisir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

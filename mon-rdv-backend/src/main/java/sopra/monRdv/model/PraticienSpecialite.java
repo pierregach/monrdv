@@ -39,6 +39,22 @@ public class PraticienSpecialite {
 		super();
 	}
 
+	public Praticien getPraticien() {
+		return praticien;
+	}
+
+	public void setPraticien(Praticien praticien) {
+		this.praticien = praticien;
+	}
+
+	public Specialite getSpecialite() {
+		return specialite;
+	}
+
+	public void setSpecialite(Specialite specialite) {
+		this.specialite = specialite;
+	}
+
 	public Long getId() {
 		return id;
 	}

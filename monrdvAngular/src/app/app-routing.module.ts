@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PriseRdvComponent } from './prise-rdv/prise-rdv.component';
 
 const routes: Routes = [
-  {path: "priserdv", component: PriseRdvComponent}
+  {path: "prise-rdv", component: PriseRdvComponent}
 ];
 
 @NgModule({

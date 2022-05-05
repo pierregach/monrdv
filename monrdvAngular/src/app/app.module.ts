@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { CreneauComponent } from './creneau/creneau.component';
 import { AccueilRechercheComponent } from './accueil-recherche/accueil-recherche.component';
 import { PriseRdvComponent } from './prise-rdv/prise-rdv.component';
+import { InfoPatientComponent } from './prise-rdv/info-patient/info-patient.component';
+import { InfoPraticienComponent } from './prise-rdv/info-praticien/info-praticien.component';
+import { CalendrierCreneauComponent } from './prise-rdv/calendrier-creneau/calendrier-creneau.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreneauComponent,
     AccueilRechercheComponent,
-    PriseRdvComponent],
+    PriseRdvComponent,
+    InfoPatientComponent,
+    InfoPraticienComponent,
+    CalendrierCreneauComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

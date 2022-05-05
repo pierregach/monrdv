@@ -1,5 +1,6 @@
 package sopra.monRdv.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import sopra.monRdv.model.PraticienSpecialite;
 import sopra.monRdv.model.Specialite;
+import sopra.monRdv.model.Views;
+import sopra.monRdv.repository.IPraticienSpecialiteRepository;
 import sopra.monRdv.repository.ISpecialiteRepository;
 
 @RestController
@@ -26,6 +32,8 @@ public class SpecialiteRestController {
 
 	@Autowired
 	private ISpecialiteRepository specialiteRepo;
+	@Autowired
+	private IPraticienSpecialiteRepository pratspecRepo;
 
 	@GetMapping("")
 	public List<Specialite> findAll() {
@@ -39,6 +47,21 @@ public class SpecialiteRestController {
 
 		if (optSpecialite.isPresent()) {
 			return optSpecialite.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
+	
+	@GetMapping("/praticien/{id}")
+	@JsonView(Views.ViewCommon.class)
+	public List<Specialite> findByPraticienId(@PathVariable Long id) {
+
+		List<Specialite> liste = new ArrayList<>();
+		
+		pratspecRepo.findByPraticienId(id).forEach(ps -> liste.add(ps.getSpecialite()));
+
+		if (!liste.isEmpty()) {
+			return liste;
 		} else {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}

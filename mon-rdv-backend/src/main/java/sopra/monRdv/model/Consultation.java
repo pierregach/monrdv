@@ -38,17 +38,17 @@ public class Consultation {
 	
 	@ManyToOne
 	@JoinColumn(name = "patient_id")
-	@JsonView(Views.ViewCommon.class)
+	//@JsonView(Views.ViewCommon.class)
 	private Patient patient;
 	
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
-	@JsonView(Views.ViewCommon.class)
+	//@JsonView(Views.ViewCommon.class)
 	private Praticien praticien;
 	
 	@ManyToOne
 	@JoinColumn(name = "motif_id")
-	@JsonView(Views.ViewCommon.class)
+	//@JsonView(Views.ViewCommon.class)
 	private Motif motif;
 	
 	@OneToMany(mappedBy = "consultation")

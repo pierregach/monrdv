@@ -1,1 +1,15 @@
-<p>prise-rdv works!</p>
+<h1>Votre rendez-vous</h1>
+
+<div class="row">
+  <div class="col" info-praticien [praticien]="praticien" [specialites]="specialites" ></div>
+  <div class="col">
+    <label for="motif"> Motif (nbCreneau : {{motifForm?.nbCreneau}}): </label><select class="form-control" [(ngModel)]="motifFormId" id="motif">
+      <option [value]="motif.id" *ngFor="let motif of listeMotifs"> {{motif?.libelle}}  </option>
+    </select>
+  </div>
+</div>
+
+<div class="row d-flex" >
+  <div class="patient ms-auto me-auto" info-patient [patient]="patient" [motif]="motifForm" ></div>
+  <div class="calendrier me-0 border border-dark" calendrier-creneau [dureeCreneau]="praticien?.dureeCreneau" [nbCreneau]="motifForm?.nbCreneau"  ></div>
+</div>

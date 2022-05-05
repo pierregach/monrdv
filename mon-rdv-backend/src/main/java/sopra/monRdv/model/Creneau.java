@@ -25,11 +25,11 @@ public class Creneau {
 	private int version;
 	
 	@Temporal(TemporalType.DATE)
-	@JsonView(Views.ViewCommon.class)
+	//@JsonView(Views.ViewCommon.class)
 	private Date dateCreneau;
 	
 	@Temporal(TemporalType.TIME)
-	@JsonView(Views.ViewCommon.class)
+	//@JsonView(Views.ViewCommon.class)
 	private Date heureCreneau;
 
 	@JsonView(Views.ViewCommon.class)
